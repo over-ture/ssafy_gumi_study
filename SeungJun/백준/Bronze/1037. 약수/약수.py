@@ -1,0 +1,5 @@
+N=int(input())
+n=list(map(int,input().split()))
+n.sort()
+a=min(n)*max(n)
+print(a)
