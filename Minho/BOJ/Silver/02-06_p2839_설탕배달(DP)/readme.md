@@ -43,15 +43,15 @@ memo[k]: $k$ kg의 설탕을 담기 위해 필요한 최소 봉지 개수
 ## 💻 코드 구조 상세 (Core Logic)
 
 🏗️ 초기화 (Initialization)
-Java
+```Java
 //봉지로 표현할 수 없으면 MAX_VALUE 처리입니다.
 Arrays.fill(memo, Integer.MAX_VALUE);
 // 0kg을 배달하는 봉지 개수는 0개
 memo[0] = 0;
-
+```
 
 🔄 반복문 (Iteration)작은 무게(`3kg`)부터 목표 무게(N)까지 차례대로 최적의 값을 쌓아 나갑니다.
-Java
+```Java
 for(int i = 0; i < 5001; ++i) {
     // 1. 3kg 봉지를 추가할 수 있는 경우
     if(i >= 3 && memo[i-3] != Integer.MAX_VALUE)
@@ -61,6 +61,7 @@ for(int i = 0; i < 5001; ++i) {
     if(i >= 5 && memo[i-5] != Integer.MAX_VALUE)
         memo[i] = Math.min(memo[i-5] + 1, memo[i]);
 }
+```
 🔍조건 검사와 갱신
  1. memo[i-3] != Integer.MAX_VALUE: 이전에 해당 무게를 만드는 것이 불가능했다면, 거기에 봉지를 더해도 의미가 없으므로 유효성을 검사합니다.
  2. Math.min(...): 기존에 저장된 방식보다 현재 새로 계산한 방식(3kg나 5kg를 추가한 방식)이 봉지 개수가 더 적다면 갱신합니다.
