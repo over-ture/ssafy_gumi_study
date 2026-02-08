@@ -5,7 +5,7 @@ import java.io.*;
 public class Main {
 
 
- 
+  
     static int[] memo = new int[5005];
     //상태 정의 MEMO란 무엇인가?
     //MEMO[상태] = 상태에 따른 값 저장
