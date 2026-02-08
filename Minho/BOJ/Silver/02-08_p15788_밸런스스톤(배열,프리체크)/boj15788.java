@@ -8,7 +8,7 @@ public class Main {
     static long diag2;
     static int n ;
     public static void main(String[] args)throws Exception {
-
+ 
         BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw= new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st ;
