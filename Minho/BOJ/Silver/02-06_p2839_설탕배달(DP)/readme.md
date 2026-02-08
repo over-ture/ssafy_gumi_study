@@ -1,8 +1,8 @@
 
-# [BOJ] 1063 - 킹 (Java)
+# [BOJ] 2839 - 설탕배달 (Java)
 
 ## 🔗 문제 링크
-[백준 2578번: 빙고](https://www.acmicpc.net/problem/1063)
+[백준 2839: 설탕배달](https://www.acmicpc.net/problem/2839)
 
 
 ---
