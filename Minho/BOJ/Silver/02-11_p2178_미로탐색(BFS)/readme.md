@@ -2,7 +2,7 @@
 # [BOJ] 2178 - 미로탐색 (Java)
 
 ## 🔗 문제 링크
-[백준 15788번: 밸런스 스톤](https://www.acmicpc.net/problem/2178)
+[백준 2178번: 미로탐색](https://www.acmicpc.net/problem/2178)
 
 
 ---
