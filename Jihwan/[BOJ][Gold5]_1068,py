@@ -1,0 +1,34 @@
+def cut(node):
+    for i in range(n):
+        if p[i] == node:
+            cut(i)
+            p[i] = -2
+
+n = int(input())
+p = list(map(int, input().split()))
+target = int(input())
+
+
+cut(target)
+p[target] = -2
+
+child = [[] for _ in range(n)]
+
+root = 0
+removed = 0
+
+for i in range(n):
+    if p[i] >= 0:
+        child[p[i]].append(i)
+    if p[i] == -1:
+        root = p[i]
+    elif p[i] == -2:
+        removed += 1
+
+cnt = 0
+for j in child:
+    if len(j) == 0:
+        cnt += 1
+
+cnt -= removed
+print(cnt)
