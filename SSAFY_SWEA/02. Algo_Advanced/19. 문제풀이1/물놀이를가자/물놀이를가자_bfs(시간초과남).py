@@ -8,17 +8,6 @@ drs, dcs = [-1, 0, 1, 0], [0, 1, 0, -1]
 def in_range(x,y):
     return 0 <= x < n and 0 <= y < m
 
-def bfs(R,C,Dist):
-    vis[R][C] = Dist
-    q = deque([(R, C, Dist)])
-    while q:
-        r, c, dist = q.popleft()
-        for d in range(4):
-            nr, nc = r + drs[d], c + dcs[d]
-            if in_range(nr, nc) and dist + 1 < vis[nr][nc]:
-                vis[nr][nc] = dist + 1
-                q.append((nr, nc, dist+1))
-
 T = int(input())
 for tc in range(1,T+1):
     n, m = map(int, input().split())
@@ -31,9 +20,20 @@ for tc in range(1,T+1):
                 water.append((i, j)) # 물 위치 찾기
             elif temp[j] == 'L':
                 land.append((i,j))
-    vis = [[float('inf')] * m for _ in range(n)]
+    vis = [[-1] * m for _ in range(n)]
+    q = deque()
     for r, c in water:
-        bfs(r, c, 0)
+        vis[r][c] = 0
+        q.append((r,c))
+
+    while q:
+        r, c = q.popleft()
+        for d in range(4):
+            nr, nc = r + drs[d], c + dcs[d]
+            if in_range(nr, nc) and vis[nr][nc] == -1:
+                vis[nr][nc] = vis[r][c] + 1
+                q.append((nr, nc))
+
     ans = 0
     for r, c in land:
         ans += vis[r][c]
