@@ -1,3 +1,4 @@
+
 def cut(node):
     for i in range(n):
         if p[i] == node:
