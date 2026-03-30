@@ -20,7 +20,7 @@ def bfs():
                     vis[nr][nc][w] = vis[r][c][w] + 1
                     q.append((nr,nc,w))
 
-                elif arr[nr][nc] == 1 and w == 0: # 벽 안 부쉈는데 벽 만났으면
+                elif arr[nr][nc] == 1 and w == 0 and vis[nr][nc][1] == -1: # 벽 안 부쉈는데 벽 만났으면
                     vis[nr][nc][1] = vis[r][c][0] + 1
                     q.append((nr,nc,1))
             
