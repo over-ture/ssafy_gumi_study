@@ -16,8 +16,11 @@ for tc in range(1,T+1):
                 dp[i][j] = 0
             else:
                 dp[i][j] = min(dp[i][j], dp[i-1][j]+1, dp[i][j-1]+1, dp[i+1][j]+1, dp[i][j+1]+1)
+<<<<<<< HEAD
     for i in dp:
         print(i)
+=======
+>>>>>>> f004f55cad382e72c8c19d5d4be06b3603ab15e3
     for i in range(n):
         for j in range(m):
             if dp[i][j] != float('inf') and dp[i][j] != 0:
